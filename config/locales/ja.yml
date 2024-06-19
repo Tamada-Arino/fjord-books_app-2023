@@ -191,3 +191,7 @@ ja:
     back: 本一覧へ戻る
     edit: 本を編集する
     destroy: 本を削除する
+  page:
+    title: 本一覧
+  html:
+    title: 本アプリ

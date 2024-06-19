@@ -225,3 +225,7 @@ en:
     back: Back to books
     edit: Edit this book
     destroy: Destroy this book
+  page:
+    title: Books
+  html:
+    title: BooksApp
