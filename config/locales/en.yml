@@ -219,3 +219,9 @@ en:
     create: Book was successfully created.
     update: Book was successfully updated.
     destroy: Book was successfully destroyed.
+  link:
+    new: New book
+    show: Show this book
+    back: Back to books
+    edit: Edit this book
+    destroy: Destroy this book
