@@ -181,3 +181,7 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  notice:
+    create: 本の作成に成功しました
+    update: 本の更新に成功しました
+    destroy: 本の削除に成功しました
