@@ -5,9 +5,8 @@
   <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
 </div>
 <p style="color: green"><%= notice %></p>
-
 <h1><%= t('views.common.title_index', name: i18n_pluralize(Book.model_name.human)) %></h1>
-
+<%= link_to t('views.common.users'), users_path %>
 <div id="books" class="index-items">
   <% @books.each do |book| %>
     <div class="index-item">
@@ -24,5 +23,3 @@
 <nav class="page-nav">
     <%= link_to t('views.common.new', name: Book.model_name.human.downcase), new_book_path %>
 </nav>
-
-<%= link_to "ユーザー一覧ページ", users_path %>
