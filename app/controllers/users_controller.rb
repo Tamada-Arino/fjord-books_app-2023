@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def index
-    @users = User.all
+    paginate_per = 10
+    @users = User.order([:created_at]).page(params[:page]).per(paginate_per)
   end
 
   def show
