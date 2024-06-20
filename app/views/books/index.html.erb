@@ -1,5 +1,6 @@
 <div>
   <p>ようこそ <%= current_user.name %>さん</p>
+  <%= link_to "ユーザー情報変更", edit_user_registration_path %>
   <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
 </div>
 <p style="color: green"><%= notice %></p>
