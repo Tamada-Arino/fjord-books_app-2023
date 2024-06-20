@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  VALID_POST_CODE_REGEX = /\A\d{3}[-]?\d{4}\z/
+  VALID_POST_CODE_REGEX = /\A\d{3}-?\d{4}\z/
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :introduction, length: { maximum: 200 }
