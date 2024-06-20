@@ -194,6 +194,9 @@ ja:
       title_edit: "%{name}の編集"
       error: エラー
       validation_error: "%{errors}があるため、この%{name}は保存できませんでした"
+      users: ユーザー一覧
+      page_back: 戻る
+      user_page: "%{name}さんのマイページ"
     pagination:
       first: '« 最初'
       last: '最後 »'

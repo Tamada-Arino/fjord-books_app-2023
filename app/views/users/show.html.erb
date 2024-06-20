@@ -1,28 +1,24 @@
-<h3><%= @user.name %>さんのページ</h3>
-<%= link_to "戻る", :back %>
+<h3><%= t('views.common.user_page', name: @user.name) %></h3>
+<%= link_to t('views.common.page_back'), :back %>
 <table>
   <tr>
-    <th>名前</th>
+    <th><%= t('activerecord.attributes.user.name') %></th>
     <td><%= @user.name %></td>
   </tr>
   <tr>
-    <th>メールアドレス</th>
-    <td><%= @user.email %></td>
-  </tr>
-  <tr>
-    <th>郵便番号</th>
+    <th><%= t('activerecord.attributes.user.post_code') %></th>
     <td>
       <%= @user.post_code %>
     </td>
   </tr>
   <tr>
-    <th>住所</th>
+    <th><%= t('activerecord.attributes.user.address') %></th>
     <td>
       <%= @user.address %>
     </td>
   </tr>
   <tr>
-    <th>自己紹介</th>
+    <th><%= t('activerecord.attributes.user.introduction') %></th>
     <td>
       <%= @user.introduction %>
     </td>
