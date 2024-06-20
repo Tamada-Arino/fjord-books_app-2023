@@ -1,0 +1,11 @@
+<div>
+  <%= link_to user_path(user.id) do %>
+    <p><%= user.name %></p>
+    <% if user.post_code %>
+      <p><%= user.post_code %></p>
+    <% end %>
+    <% if user.address %>
+      <p><%= user.address %></p>
+    <% end %>
+  <% end %>
+</div>
