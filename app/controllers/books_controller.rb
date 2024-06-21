@@ -2,11 +2,11 @@
 
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
+  PAGINATES_PER = 3
 
   # GET /books or /books.json
   def index
-    paginates_per = 3
-    @books = Book.order([:created_at]).page(params[:page]).per(paginates_per)
+    @books = Book.order([:created_at]).page(params[:page]).per(PAGINATES_PER)
   end
 
   # GET /books/1 or /books/1.json
