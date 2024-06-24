@@ -186,12 +186,12 @@ ja:
     update: "%{model}の更新に成功しました"
     destroy: "%{model}の削除に成功しました"
   link:
-    new: 新しい本を登録
-    show: この本の詳細
-    back: 本一覧へ戻る
-    edit: 本を編集する
-    destroy: 本を削除する
+    new: "新しい%{model}を登録"
+    show: "この%{model}の詳細"
+    back: "%{model}一覧へ戻る"
+    edit: "%{model}を編集する"
+    destroy: "%{model}を削除する"
   page:
-    title: 本一覧
+    title: "%{model}一覧"
   html:
     title: 本アプリ
