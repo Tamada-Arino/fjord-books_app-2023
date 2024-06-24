@@ -227,5 +227,7 @@ en:
     destroy: "Destroy this %{model}"
   page:
     title: "%{model}s"
+    new: "New %{model}"
+    edit: "Edit %{model}"
   html:
     title: BooksApp

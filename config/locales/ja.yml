@@ -193,5 +193,7 @@ ja:
     destroy: "%{model}を削除する"
   page:
     title: "%{model}一覧"
+    new: "%{model}の登録"
+    edit: "%{model}の編集"
   html:
     title: 本アプリ
