@@ -17,7 +17,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -43,7 +43,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -182,9 +182,9 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   notice:
-    create: 本の登録に成功しました
-    update: 本の更新に成功しました
-    destroy: 本の削除に成功しました
+    create: "%{model}の登録に成功しました"
+    update: "%{model}の更新に成功しました"
+    destroy: "%{model}の削除に成功しました"
   link:
     new: 新しい本を登録
     show: この本の詳細
