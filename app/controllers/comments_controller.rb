@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      # コメント作成失敗時の処理は後述
+      @comments = @commentable.comments
+      render_commentable_show
     end
   end
 
