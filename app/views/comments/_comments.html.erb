@@ -1,0 +1,17 @@
+<div class="comments-container">
+  <strong><%= Comment.model_name.human %>:</strong>
+  <% if comments.any? %>
+    <ul>
+      <% comments.each do |comment| %>
+        <% if comment.persisted? %>
+          <li>
+            <%= comment.content %>
+            <small>
+              (<%= link_to comment.user.name || comment.user.email, comment.user %> - <%= l comment.created_at.to_s(:datetime_jp) %>)
+            </small>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
