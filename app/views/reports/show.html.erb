@@ -7,3 +7,5 @@
   <% end %>
   <%= link_to t('views.common.back', name: Report.model_name.human), reports_path %>
 </div>
+
+<%= render 'comments/form', commentable: @report, comment: @comment %>
