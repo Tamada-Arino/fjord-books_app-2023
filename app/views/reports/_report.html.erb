@@ -5,6 +5,11 @@
   </p>
 
   <p>
+    <strong><%= t(Report.human_attribute_name('created_at')) %>:</strong>
+    <%= report.created_at.to_s(:datetime_jp) %>
+  </p>
+
+  <p>
     <strong><%= t(Report.human_attribute_name('title')) %>:</strong>
     <%= report.title %>
   </p>
