@@ -7,8 +7,12 @@
           <li>
             <%= comment.content %>
             <small>
-              (<%= link_to comment.user.name || comment.user.email, comment.user %> - <%= l comment.created_at.to_s(:datetime_jp) %>)
+              (<%= link_to comment.user.name || comment.user.email, comment.user %> - <%= l comment.created_at, format: :short %>)
             </small>
+            <% if current_user == comment.user %>
+              <%= link_to t('views.common.edit'), edit_polymorphic_path([commentable, comment]) %> |
+              <%= link_to t('views.common.destroy'), polymorphic_path([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+            <% end %>
           </li>
         <% end %>
       <% end %>
