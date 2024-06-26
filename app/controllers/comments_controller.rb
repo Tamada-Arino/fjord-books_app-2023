@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_comment, only: %i[edit update destroy]
+  before_action :correct_user?, only: %i[edit update destroy]
 
   def create
     @comment = @commentable.comments.build(comment_params)
@@ -37,5 +39,9 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content)
+  end
+
+  def correct_user?
+    redirect_to root_path, alert: t('views.common.unauthorized') unless @comment.user_id == current_user.id
   end
 end
