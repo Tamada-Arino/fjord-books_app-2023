@@ -1,16 +1,16 @@
 <div id="<%= dom_id report %>">
   <p>
-    <strong>投稿ユーザー:</strong>
+    <strong><%= t(Report.human_attribute_name('user')) %>:</strong>
     <%= report.user.name || report.user.email %>
   </p>
 
   <p>
-    <strong>Title:</strong>
+    <strong><%= t(Report.human_attribute_name('title')) %>:</strong>
     <%= report.title %>
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong><%= t(Report.human_attribute_name('content')) %>:</strong>
     <%= report.content %>
   </p>
 
