@@ -1,7 +1,7 @@
 <%= render @report %>
 
 <div>
-  <% if user_signed_in? && @report.user_id == current_user.id %>
+  <% if @report.user == current_user %>
     <%= link_to t('views.common.edit', name: Report.model_name.human), edit_report_path(@report) %>
     <%= button_to t('views.common.destroy', name: Report.model_name.human), @report, method: :delete %>
   <% end %>
