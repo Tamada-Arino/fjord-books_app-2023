@@ -16,5 +16,7 @@
         <% end %>
       <% end %>
     </ul>
+  <% else %>
+    <p><%= t('views.common.no_content', name: Comment.model_name.human) %><p>
   <% end %>
 </div>
