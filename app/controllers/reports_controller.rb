@@ -2,7 +2,6 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :correct_user?, only: %i[edit update destroy]
 
   def index
