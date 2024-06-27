@@ -1,0 +1,26 @@
+<h3><%= t('views.common.user_page', name: @user.name) %></h3>
+<%= link_to t('views.common.page_back'), :back %>
+<table>
+  <tr>
+    <th><%= t('activerecord.attributes.user.name') %></th>
+    <td><%= @user.name %></td>
+  </tr>
+  <tr>
+    <th><%= t('activerecord.attributes.user.postal_code') %></th>
+    <td>
+      <%= @user.postal_code %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= t('activerecord.attributes.user.address') %></th>
+    <td>
+      <%= @user.address %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= t('activerecord.attributes.user.introduction') %></th>
+    <td>
+      <%= @user.introduction %>
+    </td>
+  </tr>
+</table>

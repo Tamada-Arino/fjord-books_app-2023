@@ -11,6 +11,21 @@
   </head>
 
   <body class="<%= params[:action] %>">
+    <header>
+      <% if user_signed_in? %>
+        <p><%= t('views.common.welcome', name: current_user.name) %></p>
+        <div>
+          <%= link_to t('views.common.my_page'), user_path(current_user) %>
+          <%= link_to t('views.common.edit_user'), edit_user_registration_path %>
+          <%= button_to t('views.common.logout'), destroy_user_session_path, method: :delete %>
+        </div>
+      <% end %>
+    </header>
+    <% if notice %>
+      <p style="color: green"><%= notice %></p>
+    <% elsif alert %>
+      <p style="color: red"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

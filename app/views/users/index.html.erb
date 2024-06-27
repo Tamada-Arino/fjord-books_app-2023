@@ -1,0 +1,6 @@
+<h3><%= t('views.common.title_index', name: User.model_name.human) %></h3>
+<%= link_to  t('views.common.back', name: i18n_pluralize(Book.model_name.human)), root_path %>
+<div>
+  <%= render partial: 'shared/user_list', collection: @users, as: :user %>
+  <%= paginate @users %>
+</div>

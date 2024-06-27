@@ -1,0 +1,5 @@
+<%= link_to user_path(user) do %>
+  <p><%= user.name %><br>
+    <%= user.introduction.truncate(50) %>
+  </p>
+<% end %>
