@@ -6,6 +6,6 @@ module UsersHelper
   end
 
   def user_name_or_email(user)
-    (user.name.nil? || user.name == "") ? user.email : user.name
+    user.name.nil? || user.name == '' ? user.email : user.name
   end
 end
