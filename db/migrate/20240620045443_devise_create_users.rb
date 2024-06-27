@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
       ## 追加カラム
       t.string :name
-      t.string :post_code
+      t.string :postal_code
       t.string :address
       t.text   :introduction
 

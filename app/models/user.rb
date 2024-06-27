@@ -10,5 +10,5 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :introduction, length: { maximum: 200 }
-  validates :post_code, format: { with: VALID_POST_CODE_REGEX }, allow_blank: true
+  validates :postal_code, format: { with: VALID_POST_CODE_REGEX }, allow_blank: true
 end

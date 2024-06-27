@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_20_045443) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name"
-    t.string "post_code"
+    t.string "postal_code"
     t.string "address"
     t.text "introduction"
     t.string "reset_password_token"
