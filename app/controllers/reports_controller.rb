@@ -52,15 +52,15 @@ class ReportsController < ApplicationController
 
   private
 
-    def set_report
-      @report = Report.find(params[:id])
-    end
+  def set_report
+    @report = Report.find(params[:id])
+  end
 
-    def report_params
-      params.require(:report).permit(:title, :content, :user_id)
-    end
+  def report_params
+    params.require(:report).permit(:title, :content, :user_id)
+  end
 
-    def correct_user?
-      redirect_to root_path, alert: t('views.common.unauthorized') unless @report.user_id == current_user.id
-    end
+  def correct_user?
+    redirect_to root_path, alert: t('views.common.unauthorized') unless @report.user_id == current_user.id
+  end
 end
