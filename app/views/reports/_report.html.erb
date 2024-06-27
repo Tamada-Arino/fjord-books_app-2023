@@ -1,7 +1,7 @@
 <div id="<%= dom_id report %>">
   <p>
     <strong><%= t(Report.human_attribute_name('user')) %>:</strong>
-    <%= report.user.name || report.user.email %>
+    <%= user_name_or_email(report.user) %>
   </p>
 
   <p>
