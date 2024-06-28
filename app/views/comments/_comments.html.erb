@@ -2,7 +2,7 @@
   <strong><%= Comment.model_name.human %>:</strong>
   <% if comments.any? %>
     <ul>
-      <% comments.each do |comment| %>
+      <% comments.order(:id).each do |comment| %>
         <% if comment.persisted? %>
           <li>
             <%= comment.content %>
