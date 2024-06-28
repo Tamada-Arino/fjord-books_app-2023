@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
   before_action :correct_user?, only: %i[edit update destroy]
 
   def index
-    @reports = Report.all
+    @reports = Report.order[:id]
   end
 
   def show
