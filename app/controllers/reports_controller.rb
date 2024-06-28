@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
+  before_action :set_user_reports, only: %i(edit update delete)
+
   def index
     @reports = Report.order(:id)
   end
@@ -15,9 +17,7 @@ class ReportsController < ApplicationController
     @report = Report.new
   end
 
-  def edit
-    @report = current_user.reports.find(params[:id])
-  end
+  def edit; end
 
   def create
     @report = current_user.reports.new(report_params)
@@ -30,8 +30,6 @@ class ReportsController < ApplicationController
   end
 
   def update
-    @report = current_user.reports.find(params[:id])
-
     if @report.update(report_params)
       redirect_to report_url(@report), notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
@@ -40,12 +38,16 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    current_user.reports.find(params[:id]).destroy
+    @report.destroy
 
     redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
 
   private
+
+  def set_user_reports
+    @report = current_user.reports.find(params[:id])
+  end
 
   def report_params
     params.require(:report).permit(:title, :content, :user_id)
