@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show edit update destroy]
-  before_action :correct_user?, only: %i[edit update destroy]
-
   def index
     @reports = Report.order(:id)
   end
 
   def show
+    @report = Report.find(params[:id])
     @comment = Comment.new
     @comments = @report.comments
   end
@@ -17,7 +15,9 @@ class ReportsController < ApplicationController
     @report = Report.new
   end
 
-  def edit; end
+  def edit
+    @report = current_user.reports.find(params[:id])
+  end
 
   def create
     @report = Report.new(report_params)
@@ -32,6 +32,7 @@ class ReportsController < ApplicationController
   end
 
   def update
+    @report = current_user.reports.find(params[:id])
     respond_to do |format|
       if @report.update(report_params)
         format.html { redirect_to report_url(@report), notice: t('controllers.common.notice_update', name: Report.model_name.human) }
@@ -42,7 +43,7 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    @report.destroy
+    current_user.reports.find(params[:id]).destroy
 
     respond_to do |format|
       format.html { redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human) }
@@ -51,15 +52,7 @@ class ReportsController < ApplicationController
 
   private
 
-  def set_report
-    @report = Report.find(params[:id])
-  end
-
   def report_params
     params.require(:report).permit(:title, :content, :user_id)
-  end
-
-  def correct_user?
-    redirect_to root_path, alert: t('views.common.unauthorized') unless @report.user_id == current_user.id
   end
 end
