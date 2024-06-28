@@ -177,7 +177,7 @@ ja:
   time:
     am: 午前
     formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      default: "%m/%d %H:%M"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
@@ -193,6 +193,8 @@ ja:
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
       error: エラー
+      unauthorized: 現在のアカウントに権限がありません
+      no_content: "%{name}がありません"
       validation_error: "%{errors}があるため、この%{name}は保存できませんでした"
       title_show: "%{name}の詳細"
       sign_out: ログアウト

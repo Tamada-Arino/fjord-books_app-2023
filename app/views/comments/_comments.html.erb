@@ -1,0 +1,23 @@
+<% comments = commentable.comments %>
+<div class="comments-container">
+  <strong><%= Comment.model_name.human %>:</strong>
+  <% if comments.any? %>
+    <ul>
+      <% comments.order(:id).each do |comment| %>
+        <% if comment.persisted? %>
+          <li>
+            <%= comment.content %>
+            <small>
+              (<%= link_to user_name_or_email(comment.user), comment.user %> - <%= l comment.created_at %>)
+            </small>
+            <% if current_user == comment.user %>
+              <%= button_to t('views.common.destroy', name: Comment.model_name.human), [commentable, comment], method: :delete %>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% else %>
+    <p><%= t('views.common.no_content', name: Comment.model_name.human) %><p>
+  <% end %>
+</div>
