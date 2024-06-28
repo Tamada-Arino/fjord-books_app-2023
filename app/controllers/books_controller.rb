@@ -10,8 +10,7 @@ class BooksController < ApplicationController
 
   # GET /books/1 or /books/1.json
   def show
-    @comment = Comment.new
-    @comments = @book.comments # 追記
+    @comments = @book.comments
   end
 
   # GET /books/new

@@ -1,3 +1,5 @@
+<% comment ||= Comment.new %>
+
 <%= form_with model: [commentable, comment] do |f| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
