@@ -21,6 +21,7 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.new(report_params)
+    @report.user = current_user
 
     respond_to do |format|
       if @report.save
