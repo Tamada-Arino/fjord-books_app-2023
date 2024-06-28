@@ -7,7 +7,7 @@
           <li>
             <%= comment.content %>
             <small>
-              (<%= link_to user_name_or_email(comment.user), comment.user %> - <%= l comment.created_at, format: :short %>)
+              (<%= link_to user_name_or_email(comment.user), comment.user %> - <%= l comment.created_at %>)
             </small>
             <% if current_user == comment.user %>
               <%= button_to t('views.common.destroy', name: Comment.model_name.human), [commentable, comment], method: :delete %>
