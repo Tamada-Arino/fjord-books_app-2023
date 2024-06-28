@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  before_action :set_commentable
+
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
@@ -21,5 +23,14 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content)
+  end
+
+  def set_commentable
+    if params[:book_id]
+      @commentable = Book.find(params[:book_id])
+    elsif params[:report_id]
+      @commentable = Report.find(params[:report_id])
+
+    end
   end
 end
