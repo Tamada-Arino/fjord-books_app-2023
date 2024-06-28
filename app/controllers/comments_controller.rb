@@ -13,9 +13,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
-    redirect_to root_path, alert: t('views.common.unauthorized') unless @comment.user == current_user
-    @comment.destroy
+    current_user.comments.find(params[:id]).destroy
 
     redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
